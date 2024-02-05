@@ -96,29 +96,34 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
+These packages need to be installed to provide the three main functions.
+* 
+  ```sudo dnf install gnome-screenshot wl-clipboard tesseract
   ```
 
 ### Installation
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+1. Install the prerequisites first
+   ```sudo dnf install gnome-screenshot wl-clipboard tesseract```
+2. Find the source text language(s) you need.
+   - These are for recognizing the source text in the image.
+   - All should be available from dnf or yum.
+```sudo dnf search tesseract-langpack```
+4. Install the tesseract language file(s) you need.
+   - Example for Japanese and Japanese vertical
+```sudo dnf install tesseract-langpack-jpn tesseract-langpack-jpn_vert```
+5. Clone this repo into a directory of your choosing and make executable.
+   ```cd ~/bin/
+   git clone https://github.com/tokyo-kinney/ocr2trans.git
+   chmod 755 ocr2trans/ocr2trans.sh
    ```
-3. Install NPM packages
-   ```sh
-   npm install
+6. For convenience you can add an alias for the script.
+   ```vim ~/.bashrc
+   alias ocr2trans='~/bin/ocr2trans/ocr2trans.sh'
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+7. As an command alias or using its full path, you can assign a key shortcut for easy access.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -181,10 +186,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
 ## Contact
-
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
