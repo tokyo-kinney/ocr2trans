@@ -1,5 +1,3 @@
-https://github.com/tokyo-kinney/ocr2trans<!-- PROJECT LOGO -->
-<br />
 <div align="center">
   <h3 align="center">ocr2trans</h3>
 
@@ -25,7 +23,6 @@ https://github.com/tokyo-kinney/ocr2trans<!-- PROJECT LOGO -->
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -35,7 +32,7 @@ https://github.com/tokyo-kinney/ocr2trans<!-- PROJECT LOGO -->
 ## About The Project
 
 This project combines the [tesseract ocr project](https://github.com/tesseract-ocr) and the [translate-shell](https://github.com/soimort/translate-shell) projects.
-The purpose is to translate GUI apps that don't give access to the text. Slack is an example.
+The purpose is to translate GUI apps that don't give easy access to the text. Slack is an example.
 If you can see it on your screen you should be able to translate it.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -48,9 +45,11 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 These packages need to be installed to provide the three main functions.
-* 
-  ```sudo dnf install gnome-screenshot wl-clipboard tesseract
+
   ```
+   # sudo dnf install gnome-screenshot wl-clipboard tesseract
+  ```
+
 This is tested in the Gnome desktop environment running with Wayland.
 
 ### Installation
@@ -66,17 +65,22 @@ These instructions are for Fedora 38.
 ```sudo dnf search tesseract-langpack```
 4. Install the tesseract language file(s) you need.
    - Example for Japanese and Japanese vertical
-```sudo dnf install tesseract-langpack-jpn tesseract-langpack-jpn_vert
+```
+   # sudo dnf install tesseract-langpack-jpn tesseract-langpack-jpn_vert
 ```
 5. Clone this repo into a directory of your choosing and make executable.
-   ```cd ~/bin/
-   git clone https://github.com/tokyo-kinney/ocr2trans.git
-   chmod 755 ocr2trans/ocr2trans.sh
    ```
+   # cd ~/bin/
+   # git clone https://github.com/tokyo-kinney/ocr2trans.git
+   # chmod 755 ocr2trans/ocr2trans.sh
+   ```
+
 6. For convenience you can add an alias for the script.
-   ```vim ~/.bashrc
+   ```
+   vim ~/.bashrc
    alias ocr2trans='~/bin/ocr2trans/ocr2trans.sh'
    ```
+
 7. As an command alias or using its full path, you can assign a key shortcut for easy access.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -96,21 +100,5 @@ You can click on either to copy that to the clipboard.
 ## License
 
 No license as the packages used are open source as well.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
