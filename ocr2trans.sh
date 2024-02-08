@@ -13,7 +13,7 @@ fi
 
 # OCR on the screenshot image
 # https://tesseract-ocr.github.io/tessdoc/Command-Line-Usage.html
-tesseract -l jpn+eng $OCR.png $OCR
+tesseract --dpi 180 -l jpn+eng $OCR.png $OCR
 
 # Is there text found
 TXT=$(cat $OCR.txt)
