@@ -47,7 +47,7 @@ To get a local copy up and running follow these simple example steps.
 These packages need to be installed to provide the three main functions.
 
   ```
-   # sudo dnf install gnome-screenshot wl-clipboard tesseract
+   # sudo dnf install gnome-screenshot tesseract tesseract-langpack-jpn tesseract-langpack-jpn_vert
   ```
 
 This is tested in the Gnome desktop environment running with Wayland.
@@ -70,6 +70,7 @@ These instructions are for Fedora 38.
 ```
 5. Clone this repo into a directory of your choosing and make executable.
    ```
+   # mkdir ~/bin/
    # cd ~/bin/
    # git clone https://github.com/tokyo-kinney/ocr2trans.git
    # chmod 755 ocr2trans/ocr2trans.sh
@@ -77,11 +78,14 @@ These instructions are for Fedora 38.
 
 6. For convenience you can add an alias for the script.
    ```
-   vim ~/.bashrc
-   alias ocr2trans='~/bin/ocr2trans/ocr2trans.sh'
+   # vi ~/.bashrc
+   # alias ocr2trans='~/bin/ocr2trans/ocr2trans.sh'
+   # source ~/.bashrc
    ```
 
 7. As an command alias or using its full path, you can assign a key shortcut for easy access.
+- Settings > Keyboard > View and Customize Shortcuts > Custom Shortcuts
+- Command: ~/bin/ocr2tans/ocr2trans.sh
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
