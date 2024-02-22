@@ -32,8 +32,14 @@
 ## About The Project
 
 This project combines the [tesseract ocr project](https://github.com/tesseract-ocr) and the [translate-shell](https://github.com/soimort/translate-shell) projects.
-The purpose is to translate GUI apps that don't give easy access to the text. Slack is an example.
+Takes a snapshot of anything on your screen and translates the text in the image.
+
+![demo](https://github.com/tokyo-kinney/ocr2trans/blob/main/demo.gif)
+
+
 If you can see it on your screen you should be able to translate it.
+If you have a screenshot of text you can extract it as well.
+</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -47,28 +53,37 @@ To get a local copy up and running follow these simple example steps.
 These packages need to be installed to provide the three main functions.
 
   ```
-   # sudo dnf install gnome-screenshot tesseract tesseract-langpack-jpn tesseract-langpack-jpn_vert
+   translate-shell gnome-screenshot tesseract tesseract-langpack-<language code>
   ```
-
-This is tested in the Gnome desktop environment running with Wayland.
+This is tested in Fdora 38 Workstation.
 
 ### Installation
 
 Below are the step to install the requeried packages.
-These instructions are for Fedora 38.
+These instructions are for Fedora 38 Workstation.
 
 1. Install the prerequisites first
-   ```sudo dnf install gnome-screenshot wl-clipboard tesseract```
-2. Find the source text language(s) you need.
+
+```sudo dnf install translate-shell gnome-screenshot tesseract```
+
+2. Find the languages you need.
+
    - These are for recognizing the source text in the image.
    - All should be available from dnf or yum.
 ```sudo dnf search tesseract-langpack```
+
 4. Install the tesseract language file(s) you need.
    - Example for Japanese and Japanese vertical
 ```
    # sudo dnf install tesseract-langpack-jpn tesseract-langpack-jpn_vert
 ```
-5. Clone this repo into a directory of your choosing and make executable.
+   - English is included by default.
+
+5. Replace line [#16](https://github.com/tokyo-kinney/ocr2trans/blob/75d48d8d3b5c4ebeb8fdf010477b968086887bd9/ocr2trans.sh#L16) with the languages you choose:
+tesseract --dpi 180 -l **jpn+eng** $OCR.png $OCR
+   - [Language codes](https://github.com/tesseract-ocr/tessdoc/blob/main/Data-Files-in-different-versions.md)
+
+6. Clone this repo into a directory of your choosing and make executable.
    ```
    # mkdir ~/bin/
    # cd ~/bin/
@@ -84,8 +99,8 @@ These instructions are for Fedora 38.
    ```
 
 7. As an command alias or using its full path, you can assign a key shortcut for easy access.
-- Settings > Keyboard > View and Customize Shortcuts > Custom Shortcuts
-- Command: ~/bin/ocr2tans/ocr2trans.sh
+- **Settings** > **Keyboard** > **View and Customize Shortcuts** > **Custom Shortcuts**
+- Command: /home/**<username>**/bin/ocr2tans/ocr2trans.sh
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
